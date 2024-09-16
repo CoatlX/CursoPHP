@@ -1,5 +1,31 @@
 <?php 
-/*Sirve para recibir información de formularios y enviarlos de rgreso, "echo" agrega lineas de código al HTML*/
+//session_destroy();
+//require_once 'config.php';
+//  session_start();
+
+
+if(isset($_POST["contrasena"])){//Revisa si hay algún valor en ese campo requerido por $_POST si no hay no entra
+    $_SESSION["error"] = "Acceso no autorizado";
+   // header("Location: index.php?error=true");
+    die;//para terminar hasta aquí
+}
+
+
+echo "aquí ando";
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Sirve para recibir información de formularios y enviarlos de rgreso, "echo" agrega lineas de código al HTML
 echo '<h1>Estamos recibiendo lo  siguiente</h1>';
 echo '<pre>';
 print_r($_REQUEST);//requisita información de forms
@@ -10,16 +36,16 @@ echo '</pre>';
 /*Ahora usaremos $_POST en vez de $_GET variable superglobal para recibir
 echo '<h3>Obtener Gamertag solo, usando superglobal $_GET<br> O cualquier deseada </h3>';
 echo $_GET["gamertag"], "<br>";
-echo $_GET["email"];*/
+echo $_GET["email"];
 echo '<h3>Obtener Gamertag solo, usando superglobal $_GET<br> O cualquier deseada </h3>';
 echo $_POST["gamertag"], "<br>";
 echo $_POST["email"], "<br>";
 $cookieGT = $_POST["email"];
 setcookie('gamertag', "dsfsdf" , time() + 360);
 echo '<h3>Obtener Gamertag solo, usando superglobal $_GET<br> O cualquier deseada </h3>';
-echo '<a href="https://www.php.net/manual/es/ref.strings.php">Funiones tipo String</a>'
+
 //unsetcookie para borrarla
-//echo $_COOKIE['gamertag'];
+//echo $_COOKIE['gamertag'];*/
 
 /* Sintaxis de if, else else if
 Operadores de comparación: ===, ==, !=, !==, <, >, <=, >=.
@@ -77,5 +103,4 @@ break; detiene la iteración
 */
 
 
-
- ?>
+?>

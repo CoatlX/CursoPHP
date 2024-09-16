@@ -1,5 +1,7 @@
 <?php 
 echo '<h3>Al crear la BDD en el tipo de codificación selecciona utf8_general_ci para que reconozca eñes y acentos</h3>';
+echo '<h3>C R U D (Create, Read, Update, Delete) DB => Post, Get, PUT, DELETE HTTP metodos</h3>';
+echo '<a href="index.php">Regresar al inicio</a>';
 try{
 
 $conexion = null;
@@ -12,28 +14,61 @@ $charset  = "utf8";
 //Credenciales
 $username = "root";
 $password ="";
-/*$options =
+$options =
 [
-    PDO::ATTR_ERRMODE-> PDO::ERRMODE_EXCEPTION,
-    PDO::ATTR_DEFAULT_FECTH_MOD-> PDO::FETCH_ASSOC //Remuevo indices numéricos
-];*/
+    PDO::ATTR_ERRMODE=> PDO::ERRMODE_EXCEPTION,
+    PDO::ATTR_DEFAULT_FETCH_MODE=> PDO::FETCH_ASSOC //Remuevo indices numéricos
+];
 
 //Conexión:
 $dsn =sprintf("%s:host=%s;dbname=%s;charset=%s",$engine,$host,$namedb,$charset);
 //La conexión recibe 4 parámetros, el DSN Data Source Name, el usuario, el password y opciones de excepciones
-$conexion = new PDO($dsn,$username, $password,/*$options*/);
+$conexion = new PDO($dsn,$username, $password,$options);
 
-//Recibir excepciones en caso de errores y no mande excepciones se puede hacer con array mostrado arriba con la variable $options
-$conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION,PDO::ATTR_DEFAULT_FECTH_MODE,PDO::FETCH_ASSOC);
-echo '<h5 style = "color: green;" >La conexión se ha establecido<br></h5>';
-$consulta = $conexion->prepare("SELECT * FROM tbl_as_pass");
 
+
+
+return $conexion;
 
 } catch(PDOException $e){
+    throw new Exception(sprintf("Hubo en error en la conexión con la Base de Datos: %s", $e->getMessage()));
+    
+
+   /*Se quita echo, para nos mostrar el error desde aquí
     echo '<h3 style= "color: red; font: bold;">Hubo en error en la conexión con la Base de Datos</h3><br>'.$e->getMessage().'<br>';
-    //$e->getMessage() Obtiene el error de lo que haya fallado
+    $e->getMessage() Obtiene el error de lo que haya fallado*/
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+//  EJEMPLOS DE COMO MOSTRAR LAS CONSULTAS CON echo
+/*Recibir excepciones en caso de errores y no mande excepciones se puede hacer con array mostrado arriba con la variable $options
+//$conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION, PDO::ATTR_DEFAULT_FETCH_MODE,PDO::FETCH_ASSOC);
+echo '<h5 style = "color: green;" >La conexión se ha establecido<br></h5>';
+$consulta = $conexion->prepare("SELECT * FROM `tbl_as_pass`");
+$consulta->execute();
+
+$resultadoConsulta = $consulta->fetchAll();
+
+//print_r($resultadoConsulta); //muestra todo el array resultante de la consulta
+if (empty($resultadoConsulta)){
+    echo "No se han encontrado resultados en la base de datos";
+}else{
+    foreach ($resultadoConsulta as $usernameAD){
+        echo sprintf("<h3>%s - %s - %s</h3>", $usernameAD["user_name"], $usernameAD["user:_account"], $usernameAD["user_acc_pass"]);
+    }
+}*/
 
 /*Comandos básicos
 Dentro de todas las variantes de SQL existen algunos comandos básicos que se utilizan la mayor parte del tiempo, ten en cuenta que dependiendo la base de datos que estés utilizando, pueden variar los comandos. 

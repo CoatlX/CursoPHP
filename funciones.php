@@ -14,4 +14,10 @@ function cobrar(float $cantidad, string $moneda = 'MXN' )
  
 echo '<br><br>', cobrar(10.25,'USD');
 include 'ejemploinclude.php';
+
+
+
+/*INSERT INTO `tbl_as_pass` (`ID`, `user_name`, `user:_account`, `user_acc_pass`, `depto`) 
+VALUES (NULL, 'Alejandro Lopez', 'alopez', '#IStem20', 'Sistemas');*/
+
  ?>
