@@ -42,60 +42,49 @@
    <div class="row">
       <div class="col 12 col-md-6 col-lg-4">
          <div class="card">
-         <h3 class = "card-header border-bottom-0">Registro de usuario</h3>
+            <h3 class = "card-header border-bottom-0">Registro de usuario</h3>
             <div class="card-body">
                <form action="process.php" method="POST">
-                  <div class="mb-3">
-                  <input class = "form-control"  type="hidden" id="id" name="id"value="123456789"><br>
-                  </div>
-                  <div class="mb-3">
-                  <label class = "label-control" for="nombre_usuario">Nombre usuario:</label>
-                  <input class = "form-control"  type="text" id="nombre_usuario" name="nombre_usuario">
-                  </div>
-                  <div class="mb-3">
-                  <label class = "label-control" for="nombre_red">Cuenta de red:</label>
-                  <input class = "form-control"  type="text" id="nombre_red" name="nombre_red">
-              </div>
-              <div class="mb-3">
-               <label class = "label-control" for="contrasena"> Contraseña:</label>
-               <input class = "form-control"  type="text" id="contrasena" name="contrasena">
-              <!-- <label class = "label-control" for="email"> Email:</label>
-               <input class = "form-control"  type="email" id="email" name="email">-->
-              </div>
-              <div class="mb-3">
-               <label class = "label-control" for="departamento"> Selecciona departamento:</label>
-                  <select class = "form-select" id="departamento" name="departamento">
-                  <option value="theewitcher3">Administración</option>
-                  <option value="7d2d">Arrendadora</option>
-                  <option value="ArkSA">Mercadotecnia</option>
-                  <option value="Noms">Nóminas</option>
-                  <option value="Refs">Refacciones</option>
-                  <option value="SyH">Seguridad e Higiene</option>
-                  <option value="Semi">Seminuevos</option>
-                  <option value="Serv">Servicio</option>
-                  <option value="Sis">Sistemas</option>
-                  <option value="Tes">Tesoreria</option>
-                  <option value="Vent">Ventas</option>
-                  </select>
-                  </div>
-             <!-- <div class="mb-3">
-              <label class = "label-control" for="miembros"> Número de miembros:</label>
-                  <input class = "form-control"  type="range" id="miembros" name="miembros" min="1" max = "6" value = "1">
-              </div>
-              <div class="mb-3">
-              <label class = "label-control" for="url"> Red Social:</label>
-                  <input class = "form-control"  type="url" id="url" name="url">
-              </div>
-              <div class="mb-3">
-              <label class = "label-control" for="color"> Color de equipo:</label>
-                  <input class = "form-control"  type="color" id="color" name="color">
-              </div>
-                  <input class = "form-control"  type="submit" value="Registrarse" name="submit">
-                  <input class = "form-control"  type="reset" value="Reiniciar" name="reset">
-                  Reemplazamos por botones Bootstrap-->
-                  <button class = "btn btn-success" type ="submit">Registrase</button>
-                  <button class = "btn btn-danger" type ="reset">Reiniciar</button>
-                  
+                     <input class = "form-control"  type="hidden" id="id" name="id"value="123456789"><br>
+                     <label class = "label-control" for="nombre_usuario">Nombre usuario:</label>
+                     <input class = "form-control"  type="text" id="nombre_usuario" name="nombre_usuario">
+                     <label class = "label-control" for="nombre_red">Cuenta de red:</label>
+
+                     <label class = "label-control" for="contrasena"> Contraseña:</label>
+                     <input class = "form-control"  type="text" id="contrasena" name="contrasena">
+               <!-- <label class = "label-control" for="email"> Email:</label>
+                  <input class = "form-control"  type="email" id="email" name="email">-->
+                     <label class = "label-control" for="departamento"> Selecciona departamento:</label>
+                     <select class = "form-select" id="departamento" name="departamento">
+                     <option value="Admon">Administración</option>
+                     <option value="7d2d">Arrendadora</option>
+                     <option value="ArkSA">Mercadotecnia</option>
+                     <option value="Noms">Nóminas</option>
+                     <option value="Refs">Refacciones</option>
+                     <option value="SyH">Seguridad e Higiene</option>
+                     <option value="Semi">Seminuevos</option>
+                     <option value="Serv">Servicio</option>
+                     <option value="Sis">Sistemas</option>
+                     <option value="Tes">Tesoreria</option>
+                     <option value="Vent">Ventas</option>
+                     </select>
+               <!-- <div class="mb-3">
+               <label class = "label-control" for="miembros"> Número de miembros:</label>
+                     <input class = "form-control"  type="range" id="miembros" name="miembros" min="1" max = "6" value = "1">
+               </div>
+               <div class="mb-3">
+               <label class = "label-control" for="url"> Red Social:</label>
+                     <input class = "form-control"  type="url" id="url" name="url">
+               </div>
+               <div class="mb-3">
+               <label class = "label-control" for="color"> Color de equipo:</label>
+                     <input class = "form-control"  type="color" id="color" name="color">
+               </div>
+                     <input class = "form-control"  type="submit" value="Registrarse" name="submit">
+                     <input class = "form-control"  type="reset" value="Reiniciar" name="reset">
+                     Reemplazamos por botones Bootstrap-->
+                     <button class = "btn btn-success" type ="submit">Registrase</button>
+                     <button class = "btn btn-danger" type ="reset">Reiniciar</button> 
                </form>
             </div>
          </div>

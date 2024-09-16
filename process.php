@@ -4,9 +4,10 @@
 //  session_start();
 
 
-if(isset($_POST["contrasena"])){//Revisa si hay algún valor en ese campo requerido por $_POST si no hay no entra
+if(!isset($_POST["contrasena"])){//Revisa si hay algún valor en ese campo requerido por $_POST si no hay no entra
     $_SESSION["error"] = "Acceso no autorizado";
-   // header("Location: index.php?error=true");
+   header("Location: index.php?error=true");
+   echo 'hjdjhgdjfghd';
     die;//para terminar hasta aquí
 }
 
