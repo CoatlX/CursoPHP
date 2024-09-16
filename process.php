@@ -1,18 +1,37 @@
 <?php 
-//session_destroy();
-//require_once 'config.php';
-//  session_start();
+require_once "config.php";
 
 
-if(!isset($_POST["contrasena"])){//Revisa si hay algún valor en ese campo requerido por $_POST si no hay no entra
+
+if(!isset($_POST["nombre_usuario"])){//Revisa si hay algún valor en ese campo requerido por $_POST si no hay no entra
     $_SESSION["error"] = "Acceso no autorizado";
    header("Location: index.php?error=true");
-   echo 'hjdjhgdjfghd';
     die;//para terminar hasta aquí
 }
+  /*  $_SESSION["exito"] = "Éxito en la conexión";
+    header("Location: index.php");
+    die;//para terminar hasta aquí*/
+
+    try {
+       // $_POST = array_map('trim', $_POST);Agrea trim a todas las variables del POST
+        $nombreUsuario = trim($_POST["nombre_usuario"]);
+        $nombreRed = trim($_POST["nombre_red"]);
+        $contrasenaA = trim($_POST["contrasena"]);
+        $depto = trim($_POST["departamento"]);
+        
+        //Validar variables
+       /* if(strlen($contrasenaA) < 5){       
+            throw new Exception("Contraseña inválida");
+            }*/
+            crearNuevoRegistro( $nombreUsuario,$nombreRed,$contrasenaA,$depto );
+
+   } catch (Exception $e) {
+        $_SESSION["error"] = $e->getMessage();
+        header("Location: index.php?error=true");
+        die;
+    }
 
 
-echo "aquí ando";
 
 
 
@@ -104,4 +123,3 @@ break; detiene la iteración
 */
 
 
-?>

@@ -1,7 +1,7 @@
 <?php 
-echo '<h3>Al crear la BDD en el tipo de codificación selecciona utf8_general_ci para que reconozca eñes y acentos</h3>';
+/*echo '<h3>Al crear la BDD en el tipo de codificación selecciona utf8_general_ci para que reconozca eñes y acentos</h3>';
 echo '<h3>C R U D (Create, Read, Update, Delete) DB => Post, Get, PUT, DELETE HTTP metodos</h3>';
-echo '<a href="index.php">Regresar al inicio</a>';
+echo '<a href="index.php">Regresar al inicio</a>';*/
 try{
 
 $conexion = null;
@@ -24,9 +24,7 @@ $options =
 $dsn =sprintf("%s:host=%s;dbname=%s;charset=%s",$engine,$host,$namedb,$charset);
 //La conexión recibe 4 parámetros, el DSN Data Source Name, el usuario, el password y opciones de excepciones
 $conexion = new PDO($dsn,$username, $password,$options);
-
-
-
+//$conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION, PDO::ATTR_DEFAULT_FETCH_MODE,PDO::FETCH_ASSOC);
 
 return $conexion;
 
